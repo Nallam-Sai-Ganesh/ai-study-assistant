@@ -1,9 +1,14 @@
-from dotenv import load_dotenv
+
 from langchain_mistralai.chat_models import ChatMistralAI
 from langchain_core.prompts import PromptTemplate
 import streamlit as st
 
-load_dotenv()
+import os
+
+mistral = ChatMistralAI(
+    model="mistral-small",
+    temperature=0.7
+)
 
 st.set_page_config(
     page_title="AI Study Assistant",
